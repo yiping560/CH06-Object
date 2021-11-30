@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Teal"
+    android:padding="@dimen/p10"
+    tools:context=".M0600">
+
+    <Button
+        android:id="@+id/m0600_b001"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/Yellow"
+        android:text="@string/b001"
+        android:textSize="@dimen/fontsize" />
+
+    <Button
+        android:id="@+id/m0600_b002"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/m0600_b001"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/m0600_b001"
+        android:background="@color/Yellow"
+        android:text="@string/b002"
+        android:textSize="@dimen/fontsize" />
+
+    <Button
+        android:id="@+id/m0600_b003"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/m0600_b002"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="55dp"
+        android:layout_toEndOf="@+id/m0600_b002"
+        android:background="@color/Yellow"
+        android:text="@string/b003"
+        android:textSize="@dimen/fontsize" />
+
+    <Button
+        android:id="@+id/m0600_b004"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/m0600_b003"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="55dp"
+        android:layout_toEndOf="@+id/m0600_b003"
+        android:background="@color/Yellow"
+        android:text="@string/b004"
+        android:textSize="@dimen/fontsize" />
+
+    <TextView
+        android:id="@+id/m0600_t001"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/myname"
+        android:textColor="@color/Yellow"
+        android:textSize="@dimen/fontsize" />
+
+</RelativeLayout>
