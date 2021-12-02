@@ -1,19 +1,25 @@
 package tw.tcnr07.m0609;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Menu01 extends AppCompatActivity {
 
     private TextView myname;
     private TextView tv;
+    private Intent intent01=new Intent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,10 +91,53 @@ public class Menu01 extends AppCompatActivity {
                         objt001.getPaddingBottom()); // 設定文字內間距 left,top,right,bottom
                 mlay02.addView(tv);// 顯示textview物件
 
-                // tv.setOnClickListener(clkOn);
+                tv.setOnClickListener(clkOn);
             }
         }catch (Exception e){
             return;
         }
+    }
+
+
+    View.OnClickListener clkOn=new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            int ii = (v.getId()); // 下層巨集前兩碼
+            String mm = String.format("%02d", ii);
+            String subname = "m" + mm;
+
+            // ------------------------------------------
+            intent01.putExtra("subname", subname); // subname => m05,m06,m07....m17
+            intent01.setClass(Menu01.this, Menu02.class);
+            startActivity(intent01);
+
+        }
+    };
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.m0609, menu);
+        return true;
+    }
+
+    public void onBackPressed() {
+        // super.onBackPressed();
+        Toast.makeText(getApplication(),"禁用返回鍵",Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            this.finish();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
